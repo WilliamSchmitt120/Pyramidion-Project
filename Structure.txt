@@ -7,6 +7,9 @@ ajoutez l'heure de la création de la branche a la fin comme ceci : Prenom_JJ_MM
 Pensez a push régulièrement vos avancées, dés que vous arrêter de bosser. S'il n'y a pas eu de merge
 depuis la dernière fois ou vous avez bossé, pas besoin de recréer un autre branche, continuez sur la même.
 
+Quand vous faites un commit, n'ouliez pas de le nommer (peu importe le nom, c'est surtout pour pouvoir l'identifier et avoir une idées
+générales des modifs faites).
+
 En cas de doute ou de question, contactez moi, j'éssayerait d'être dispo le plus souvent possible.
 
 William
