@@ -1,0 +1,99 @@
+Règles pour GitKraken
+---------------------
+
+Dès que vous bossez sur quelques chose, créez une branche a partir du merge le plus récent.
+Nommez la branche comme ceci avec la date du jour ou vous la créez : Prenom_JJ_MM. Si vous avez déja bossé le jour même et vous devez faire une autre branche
+ajoutez l'heure de la création de la branche a la fin comme ceci : Prenom_JJ_MM_HEURE
+Pensez a push régulièrement vos avancées, dés que vous arrêter de bosser. S'il n'y a pas eu de merge
+depuis la dernière fois ou vous avez bossé, pas besoin de recréer un autre branche, continuez sur la même.
+
+En cas de doute ou de question, contactez moi, j'éssayerait d'être dispo le plus souvent possible.
+
+William
+
+
+Structures des Dossiers
+-----------------------
+
+
+Graphismes
+
+	--> 2dSprites
+
+	Dossier des ressources 2d.
+	Utilisé principalement pour l'UI s'il y en a un.
+
+	--> 3dSprites
+
+	Dossiers des ressources graphiques 3d, notemment les diffèrentes formes et les animations.
+
+	--> Textures
+
+	Dossiers pour les tectures de matériaux
+
+		--> Render Textures
+
+		Les textures spécifiques pour le rendering des caméra et de la
+		mise en forme de l'Hologramme.
+
+Audio
+
+	--> Music
+
+	Les Différentes musiques qui seront jouées durant le jeu.
+	Nomenclature : Music_NUMERO_NOM Ex : Music_01_Starsky
+
+	--> SFX
+
+	Les effets spéciaux de sons.
+	Nomenclature : SFX_NUMERO_NOM Ex : SFX_01_Explosion
+
+	--> Voices
+
+	Les voies, notemment la voix off.
+	Nomenclature : VO_NUMERO_NOM Ex : VO_01_Off01
+
+Scenes
+
+Les Différentes scène, (ne devrait y en avoir qu'une).
+
+
+Scripts
+
+Règle pour tout les scripts. Nommez les comme vous voulez, mais méttez toujours vos initiales en premier.
+Exemple : WIS_NomDuScript
+
+	--> MainScripts
+
+	Les scripts prinicpaux, qui gère le déroulement du jeu.
+	Ce sont surtout des scripts principaux qui éxiste dans le jeu et qui effectuent
+	des tâche durant le jeu (donc les scripts qui ont des fonctions update ou start.
+
+	--> Class
+
+	Toutes les classes utilisés dans les autres scripts.
+	Ce sont les scripts qui contiennent des infos, des variables et des fonctions
+	mais aucune fonction Update, Start ou autres du même type.
+
+	--> OtherScripts
+
+	Tous les scripts qui ne rentrerait pas dans une catégorie ou dans une autre.		
+
+
+Dossiers Perso
+
+Il y a un dossier par personne avec ces initiales. Vous pouvez absolument tout ce que vous voulez dedans.
+Si vous avez un doute sur où mettre quelque chose, mettez le dans votre dossier perso, ce sera toujours mieux.
+
+STG - Steve
+LOV - Louis
+CHB - Charle
+WIS - William
+
+
+
+
+
+
+
+
