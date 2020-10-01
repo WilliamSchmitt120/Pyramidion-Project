@@ -1,4 +1,6 @@
 ﻿using UnityEngine.Audio;
+using System.Collections;
+using System.Collections.Generic;
 using System;
 using UnityEngine;
 
@@ -32,7 +34,7 @@ public class STG_AudioManager : MonoBehaviour
 
    void Start()
     {
-        Play("Theme");
+        StartCoroutine(StartFade("Theme", 10f, 0.5f));
     }
 
    public void Play (string name)
@@ -47,6 +49,19 @@ public class STG_AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+   public IEnumerator StartFade(string name, float duration, float targetVolume)
+   {
+        STG_Sound s = Array.Find(sounds, sound => sound.name == name);
+        float currentTime = 0;
+        float start = s.source.volume;
+        s.source.Play();
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            s.source.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
 
-
+        yield break;
+   }
 }
