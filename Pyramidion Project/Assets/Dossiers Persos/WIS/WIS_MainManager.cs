@@ -133,43 +133,49 @@ public class WIS_MainManager : MonoBehaviour
     {
         // wrongDialogue if player input no correct / start next section
 
-        
-
-        int keyNotPressed = 0;
-
-        
-
         foreach (var endSection in currentSection.endSections)
         {
 
             switch (endSection.endInput)
             {
                 case WIS_EndSection.inputTypes.Air:
-                    if (WIS_InputManager.instance.airInput)
+                    if (Input.GetKey(WIS_InputManager.instance.airKey))
                     {
-                        StartNextSection(endSection.nextSection);
-                        Debug.Log("EndEnd");
+                        currentSection = endSection.nextSection;
+                        currentSectionState = sectionState.intro;
+
+                        Debug.Log("StartNextSection");
+                        return;
                     };
                     break;
                 case WIS_EndSection.inputTypes.Water:
-                    if (WIS_InputManager.instance.waterInput)
+                    if (Input.GetKey(WIS_InputManager.instance.waterKey))
                     {
-                        StartNextSection(endSection.nextSection);
-                        Debug.Log("EndEnd");
+                        currentSection = endSection.nextSection;
+                        currentSectionState = sectionState.intro;
+
+                        Debug.Log("StartNextSection");
+                        return;
                     };
                     break;
                 case WIS_EndSection.inputTypes.Earth:
-                    if (WIS_InputManager.instance.earthInput)
+                    if (Input.GetKey(WIS_InputManager.instance.earthKey))
                     {
-                        StartNextSection(endSection.nextSection);
-                        Debug.Log("EndEnd");
+                        currentSection = endSection.nextSection;
+                        currentSectionState = sectionState.intro;
+
+                        Debug.Log("StartNextSection");
+                        return;
                     };
                     break;
                 case WIS_EndSection.inputTypes.Fire:
-                    if (WIS_InputManager.instance.fireInput)
+                    if (Input.GetKey(WIS_InputManager.instance.fireKey))
                     {
-                        StartNextSection(endSection.nextSection);
-                        Debug.Log("EndEnd");
+                        currentSection = endSection.nextSection;
+                        currentSectionState = sectionState.intro;
+
+                        Debug.Log("StartNextSection");
+                        return;
                     };
                     break;
                 default:
@@ -181,11 +187,11 @@ public class WIS_MainManager : MonoBehaviour
 
         }
 
-        if (keyNotPressed >= currentSection.endSections.Length && Input.anyKey == true && WIS_AudioManager.instance.inWrongDialogue == false)
+        if (WIS_AudioManager.instance.inWrongDialogue == false && CheckInputs(currentSection) && currentSectionState == sectionState.end)
         {
 
             WIS_AudioManager.instance.StartWrongDialogue();
-            Debug.Log("KeyNotPressed = " + keyNotPressed);
+            Debug.Log("Wrong in " + currentSection.sectionName);
 
         }
 
@@ -196,10 +202,45 @@ public class WIS_MainManager : MonoBehaviour
     public void StartNextSection(WIS_Section section)
     {
 
-        currentSection = section;
-        currentSectionState = sectionState.intro;
 
-        Debug.Log("StartNextSection");
+
+    }
+
+    public bool CheckInputs(WIS_Section section)
+    {
+
+        int wrong;
+        bool isWrong = false;
+        wrong = 0;
+
+        foreach (var endSection in section.endSections)
+        {
+
+            switch (endSection.endInput)
+            {
+                case WIS_EndSection.inputTypes.Air:
+                    if (WIS_InputManager.instance.airInput == false) { wrong += 1; }
+                    break;
+                case WIS_EndSection.inputTypes.Water:
+                    if (WIS_InputManager.instance.waterInput == false) { wrong += 1; }
+                    break;
+                case WIS_EndSection.inputTypes.Earth:
+                    if (WIS_InputManager.instance.earthInput == false) { wrong += 1; }
+                    break;
+                case WIS_EndSection.inputTypes.Fire:
+                    if (WIS_InputManager.instance.fireInput == false) { wrong += 1; }
+                    break;
+                default:
+                    break;
+            }
+
+
+
+        }
+
+        if (wrong >= section.endSections.Length && Input.anyKey) { isWrong = true; }
+
+        return isWrong;
 
     }
 

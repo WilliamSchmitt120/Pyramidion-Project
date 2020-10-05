@@ -12,6 +12,11 @@ public class WIS_InputManager : MonoBehaviour
     public bool earthInput;
     public bool waterInput;
 
+    public KeyCode airKey;
+    public KeyCode fireKey;
+    public KeyCode earthKey;
+    public KeyCode waterKey;
+
     private float count;
 
     void Awake()
@@ -46,25 +51,25 @@ public class WIS_InputManager : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(airKey))
         {
             airInput = true;
         }
         else { airInput = false; }
 
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKey(fireKey))
         {
             fireInput = true;
         }
         else { fireInput = false; }
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(earthKey))
         {
             earthInput = true;
         }
         else { earthInput = false; }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(waterKey))
         {
             waterInput = true;
         }

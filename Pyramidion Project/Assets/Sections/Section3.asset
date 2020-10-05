@@ -17,4 +17,4 @@ MonoBehaviour:
   wrongMonologue: Merde
   endSections:
   - nextSection: {fileID: 11400000, guid: 6d458ae2d1cf009468c6668f56886bfb, type: 2}
-    endInput: 119
+    endInput: 3

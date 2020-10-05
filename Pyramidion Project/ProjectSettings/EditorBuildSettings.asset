@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Dossiers Persos/WIS/WISTestScene.unity
+    guid: cae1a4d53f4e1764b87a8c9152d0b550
   m_configObjects: {}
