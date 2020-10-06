@@ -208,6 +208,7 @@ public class WIS_MainManager : MonoBehaviour
 
     public bool CheckInputs(WIS_Section section)
     {
+        //Return true if 
 
         int wrong;
         bool isWrong = false;
