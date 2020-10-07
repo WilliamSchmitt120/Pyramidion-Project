@@ -665,7 +665,8 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: UDUINO_READY
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
@@ -677,7 +678,11 @@ PlayerSettings:
   gcIncremental: 0
   gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform:
+<<<<<<< HEAD
     Android: 6
+=======
+    Standalone: 3
+>>>>>>> CHB_LED_07_10
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Template_3D
