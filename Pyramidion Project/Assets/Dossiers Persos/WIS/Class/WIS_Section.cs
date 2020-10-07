@@ -9,11 +9,13 @@ public class WIS_Section : ScriptableObject
 
     public string sectionName;
 
-    public string introductionMonologue;
+    public STG_Sound introductionMonologue;
 
-    public string wrongMonologue;
+    public STG_Sound wrongMonologue;
+
+    public STG_Sound ambiantMusic;
 
     public WIS_EndSection[] endSections;
 
-
+    public WIS_AnimationManager.form form;
 }

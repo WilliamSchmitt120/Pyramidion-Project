@@ -34,7 +34,7 @@ public class STG_AudioManager : MonoBehaviour
 
    void Start()
     {
-        StartCoroutine(StartFade("Theme", 10f, 0.5f));
+        //StartCoroutine(StartFade("Theme", 10f, 0.5f));
     }
 
    public void Play (string name)

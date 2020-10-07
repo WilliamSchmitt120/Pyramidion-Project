@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class WIS_MainManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class WIS_MainManager : MonoBehaviour
     private bool playedMainDialogue;
 
     public WIS_Section defaultSection;
+
+    [SerializeField] public WIS_EndSection.inputTypes lastInput;
 
     void Awake()
     {
@@ -72,8 +75,6 @@ public class WIS_MainManager : MonoBehaviour
 
         Debug.Log("In " + currentSection.sectionName);
 
-        animationPlayed = false;
-        transitionPlayed = false;
         playedMainDialogue = false;
 
         if (animationPlayed == false && WIS_AnimationManager.instance.inAnimation == false)
@@ -91,6 +92,7 @@ public class WIS_MainManager : MonoBehaviour
 
             transitionPlayed = true;
 
+            StartCoroutine(WIS_AudioManager.instance.Transition(lastInput));
 
 
         }
@@ -110,10 +112,13 @@ public class WIS_MainManager : MonoBehaviour
     {
         // MainDialogue
 
+        animationPlayed = false;
+        transitionPlayed = false;
+
         if (WIS_AudioManager.instance.inMainDialogue == false && playedMainDialogue == false)
         {
 
-            WIS_AudioManager.instance.StartMainDialogue();
+            StartCoroutine(WIS_AudioManager.instance.StartMainDialogue());
             playedMainDialogue = true;
 
         }
@@ -141,6 +146,7 @@ public class WIS_MainManager : MonoBehaviour
                 case WIS_EndSection.inputTypes.Air:
                     if (Input.GetKey(WIS_InputManager.instance.airKey))
                     {
+                        lastInput = WIS_EndSection.inputTypes.Air;
                         currentSection = endSection.nextSection;
                         currentSectionState = sectionState.intro;
 
@@ -151,6 +157,7 @@ public class WIS_MainManager : MonoBehaviour
                 case WIS_EndSection.inputTypes.Water:
                     if (Input.GetKey(WIS_InputManager.instance.waterKey))
                     {
+                        lastInput = WIS_EndSection.inputTypes.Water;
                         currentSection = endSection.nextSection;
                         currentSectionState = sectionState.intro;
 
@@ -161,6 +168,7 @@ public class WIS_MainManager : MonoBehaviour
                 case WIS_EndSection.inputTypes.Earth:
                     if (Input.GetKey(WIS_InputManager.instance.earthKey))
                     {
+                        lastInput = WIS_EndSection.inputTypes.Earth;
                         currentSection = endSection.nextSection;
                         currentSectionState = sectionState.intro;
 
@@ -171,6 +179,7 @@ public class WIS_MainManager : MonoBehaviour
                 case WIS_EndSection.inputTypes.Fire:
                     if (Input.GetKey(WIS_InputManager.instance.fireKey))
                     {
+                        lastInput = WIS_EndSection.inputTypes.Fire;
                         currentSection = endSection.nextSection;
                         currentSectionState = sectionState.intro;
 
@@ -190,7 +199,7 @@ public class WIS_MainManager : MonoBehaviour
         if (WIS_AudioManager.instance.inWrongDialogue == false && CheckInputs(currentSection) && currentSectionState == sectionState.end)
         {
 
-            WIS_AudioManager.instance.StartWrongDialogue();
+            StartCoroutine(WIS_AudioManager.instance.StartWrongDialogue());
             Debug.Log("Wrong in " + currentSection.sectionName);
 
         }
