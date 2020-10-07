@@ -13,8 +13,28 @@ MonoBehaviour:
   m_Name: Section2
   m_EditorClassIdentifier: 
   sectionName: Section2
-  introductionMonologue: Merde
-  wrongMonologue: Merde
+  introductionMonologue:
+    name: 
+    clip: {fileID: 8300000, guid: b84c3867e1a8eb6438b63451a9f8af93, type: 3}
+    volume: 1
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  wrongMonologue:
+    name: 
+    clip: {fileID: 8300000, guid: b84c3867e1a8eb6438b63451a9f8af93, type: 3}
+    volume: 1
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  ambiantMusic:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
   endSections:
   - nextSection: {fileID: 11400000, guid: 6d458ae2d1cf009468c6668f56886bfb, type: 2}
     endInput: 2
+  form: 1

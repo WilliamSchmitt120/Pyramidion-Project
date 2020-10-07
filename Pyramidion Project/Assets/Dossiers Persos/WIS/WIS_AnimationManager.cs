@@ -13,14 +13,14 @@ public class WIS_AnimationManager : MonoBehaviour
 
     public bool inAnimation;
 
-    public Mesh meshChose;
-    public Mesh meshPierre;
-    public Mesh meshAmas;
-    public Mesh meshEclat;
-    public Mesh meshSphere;
-    public Mesh meshPyramide;
+    public GameObject chose;
+    public GameObject pierre;
+    public GameObject amas;
+    public GameObject eclat;
+    public GameObject sphere;
+    public GameObject pyramide;
 
-    public MeshFilter cube;
+    public GameObject cube;
 
 
     void Awake()
@@ -68,37 +68,48 @@ public class WIS_AnimationManager : MonoBehaviour
         switch (WIS_MainManager.instance.currentSection.form)
         {
             case form.Chose:
-                cube.mesh = meshChose;
+                HideAll();
+                chose.SetActive(true);
                 break;
             case form.Pierre:
-                cube.mesh = meshPierre;
+                HideAll();
+                pierre.SetActive(true);
                 break;
             case form.Amas:
-                cube.mesh = meshAmas;
+                HideAll();
+                amas.SetActive(true);
                 break;
             case form.Eclat:
-                cube.mesh = meshEclat;
+                HideAll();
+                eclat.SetActive(true);
                 break;
             case form.Sphere:
-                cube.mesh = meshSphere;
+                HideAll();
+                sphere.SetActive(true);
                 break;
             case form.Pyramide:
-                cube.mesh = meshPyramide;           
+                HideAll();
+                pyramide.SetActive(true);
                 break;
             default:
                 break;
         }
-
-
-        
-
-
         Debug.Log("EndAnimation");
 
         inAnimation = false;
 
     }
 
+    private void HideAll()
+    {
 
+        chose.SetActive(false);
+        pierre.SetActive(false);
+        amas.SetActive(false);
+        eclat.SetActive(false);
+        sphere.SetActive(false);
+        pyramide.SetActive(false);
+
+    }
 
 }
