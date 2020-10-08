@@ -59,11 +59,29 @@ public class WIS_MainManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentSectionState == sectionState.intro) { Intro(); }
 
-        if (currentSectionState == sectionState.action) { Action(); }
+        if (currentSection.isStartSection)
+        {
 
-        if (currentSectionState == sectionState.end) { End(); }
+
+        }
+        else if (currentSection.isEndSection)
+        {
+
+
+        }
+        else
+        {
+
+            if (currentSectionState == sectionState.intro) { Intro(); }
+
+            if (currentSectionState == sectionState.action) { Action(); }
+
+            if (currentSectionState == sectionState.end) { End(); }
+
+        }
+
+
 
 
 

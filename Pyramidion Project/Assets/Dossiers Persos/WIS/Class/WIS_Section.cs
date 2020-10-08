@@ -18,4 +18,10 @@ public class WIS_Section : ScriptableObject
     public WIS_EndSection[] endSections;
 
     public WIS_AnimationManager.form form;
+
+    public bool isStartSection;
+
+    public bool isEndSection;
+
+
 }
