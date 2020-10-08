@@ -63,6 +63,7 @@ public class WIS_MainManager : MonoBehaviour
         if (currentSection.isStartSection)
         {
 
+            StartSection();
 
         }
         else if (currentSection.isEndSection)
@@ -98,10 +99,8 @@ public class WIS_MainManager : MonoBehaviour
         if (animationPlayed == false && WIS_AnimationManager.instance.inAnimation == false)
         {
 
-            WIS_AnimationManager.instance.StartAnimation();
-            animationPlayed = true;
-
-
+            StartCoroutine(WIS_AnimationManager.instance.PlayFX(lastInput));
+            animationPlayed = true;            
 
         }
 
@@ -111,7 +110,6 @@ public class WIS_MainManager : MonoBehaviour
             transitionPlayed = true;
 
             StartCoroutine(WIS_AudioManager.instance.Transition(lastInput));
-
 
         }
 
@@ -226,13 +224,6 @@ public class WIS_MainManager : MonoBehaviour
 
     }
 
-    public void StartNextSection(WIS_Section section)
-    {
-
-
-
-    }
-
     public bool CheckInputs(WIS_Section section)
     {
         //Return true if 
@@ -269,6 +260,14 @@ public class WIS_MainManager : MonoBehaviour
         if (wrong >= section.endSections.Length && Input.anyKey) { isWrong = true; }
 
         return isWrong;
+
+    }
+
+    public void StartSection()
+    {
+
+
+
 
     }
 
