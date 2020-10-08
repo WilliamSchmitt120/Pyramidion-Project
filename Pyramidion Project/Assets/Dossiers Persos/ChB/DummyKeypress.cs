@@ -14,6 +14,13 @@ public class DummyKeypress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            UduinoManager.Instance.sendCommand("victory");
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            UduinoManager.Instance.sendCommand("defeat");
+        }
     }
 }
