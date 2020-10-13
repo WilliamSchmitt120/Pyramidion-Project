@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 536c6b5bb1ccfe046a4ec327baf69f2d, type: 3}
-  m_Name: Section1
+  m_Name: EndSection3
   m_EditorClassIdentifier: 
-  sectionName: Section1
+  sectionName: EndSection3
   introductionMonologue:
-    name: Bla
-    clip: {fileID: 8300000, guid: b84c3867e1a8eb6438b63451a9f8af93, type: 3}
-    volume: 1
-    pitch: 1.5
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
     loop: 0
     source: {fileID: 0}
   wrongMonologue:
     name: 
-    clip: {fileID: 8300000, guid: b84c3867e1a8eb6438b63451a9f8af93, type: 3}
-    volume: 1
-    pitch: 1.5
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
     loop: 0
     source: {fileID: 0}
   ambiantMusic:
@@ -35,8 +35,8 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   endSections:
-  - nextSection: {fileID: 11400000, guid: af5d07949f87a1c448fc036c98118a25, type: 2}
+  - nextSection: {fileID: 11400000, guid: a191a94fcb91e9349b9abd3baaebeac3, type: 2}
     endInput: 0
-  - nextSection: {fileID: 11400000, guid: 48e081df689d91946a3f411f00caeb50, type: 2}
-    endInput: 1
-  form: 3
+  form: 1
+  isStartSection: 0
+  isEndSection: 1

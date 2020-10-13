@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 536c6b5bb1ccfe046a4ec327baf69f2d, type: 3}
-  m_Name: Section2
+  m_Name: Feu2_1
   m_EditorClassIdentifier: 
-  sectionName: Section2
+  sectionName: Feu2_1
   introductionMonologue:
     name: 
-    clip: {fileID: 8300000, guid: b84c3867e1a8eb6438b63451a9f8af93, type: 3}
-    volume: 1
-    pitch: 1.5
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
     loop: 0
     source: {fileID: 0}
   wrongMonologue:
     name: 
-    clip: {fileID: 8300000, guid: b84c3867e1a8eb6438b63451a9f8af93, type: 3}
-    volume: 1
-    pitch: 1.5
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
     loop: 0
     source: {fileID: 0}
   ambiantMusic:
@@ -35,6 +35,8 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   endSections:
-  - nextSection: {fileID: 11400000, guid: 6d458ae2d1cf009468c6668f56886bfb, type: 2}
+  - nextSection: {fileID: 11400000, guid: 5d8d78112c1a15d4282b5f6e67b64159, type: 2}
     endInput: 2
-  form: 1
+  form: 4
+  isStartSection: 0
+  isEndSection: 0

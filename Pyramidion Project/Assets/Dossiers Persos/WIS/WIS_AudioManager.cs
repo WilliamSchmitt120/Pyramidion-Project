@@ -118,17 +118,24 @@ public class WIS_AudioManager : MonoBehaviour
         Debug.Log("StartMainDialogue");
         inMainDialogue = true;
 
-        dialogueSource.clip = WIS_MainManager.instance.currentSection.introductionMonologue.clip;
-        dialogueSource.volume = WIS_MainManager.instance.currentSection.introductionMonologue.volume;
-        dialogueSource.pitch = WIS_MainManager.instance.currentSection.introductionMonologue.pitch;
+        if (WIS_MainManager.instance.currentSection.introductionMonologue.clip != null)
+        {
 
-        dialogueSource.Play();
+            dialogueSource.clip = WIS_MainManager.instance.currentSection.introductionMonologue.clip;
+            dialogueSource.volume = WIS_MainManager.instance.currentSection.introductionMonologue.volume;
+            dialogueSource.pitch = WIS_MainManager.instance.currentSection.introductionMonologue.pitch;
 
-        Debug.Log("InMainDialogue");
+            dialogueSource.Play();
 
-        yield return new WaitForSeconds(dialogueSource.clip.length);
+            Debug.Log("InMainDialogue");
 
-        dialogueSource.Stop();
+            yield return new WaitForSeconds(dialogueSource.clip.length);
+
+            dialogueSource.Stop();
+
+
+
+        }
 
         Debug.Log("EndMainDialogue");
         inMainDialogue = false;
@@ -141,15 +148,20 @@ public class WIS_AudioManager : MonoBehaviour
         Debug.Log("StartWrongDialogue");
         inWrongDialogue = true;
 
-        dialogueSource.clip = WIS_MainManager.instance.currentSection.wrongMonologue.clip;
-        dialogueSource.volume = WIS_MainManager.instance.currentSection.wrongMonologue.volume;
-        dialogueSource.pitch = WIS_MainManager.instance.currentSection.wrongMonologue.pitch;
+        if (WIS_MainManager.instance.currentSection.wrongMonologue.clip != null)
+        {
 
-        dialogueSource.Stop();
+            dialogueSource.clip = WIS_MainManager.instance.currentSection.wrongMonologue.clip;
+            dialogueSource.volume = WIS_MainManager.instance.currentSection.wrongMonologue.volume;
+            dialogueSource.pitch = WIS_MainManager.instance.currentSection.wrongMonologue.pitch;
 
-        Debug.Log("InWrongDialogue");
+            dialogueSource.Stop();
 
-        yield return new WaitForSeconds(dialogueSource.clip.length);
+            Debug.Log("InWrongDialogue");
+
+            yield return new WaitForSeconds(dialogueSource.clip.length);
+
+        }
 
         Debug.Log("EndWrongDialogue");
         inWrongDialogue = false;

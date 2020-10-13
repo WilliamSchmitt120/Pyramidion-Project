@@ -63,12 +63,20 @@ public class WIS_MainManager : MonoBehaviour
         if (currentSection.isStartSection)
         {
 
-            StartSection();
+            if (currentSectionState == sectionState.intro) { StartSection(); }
+
+            if (currentSectionState == sectionState.action) { Action(); }
+
+            if (currentSectionState == sectionState.end) { End(); }
 
         }
         else if (currentSection.isEndSection)
         {
+            if (currentSectionState == sectionState.intro) { EndIntro(); }
 
+            if (currentSectionState == sectionState.action) { Action(); }
+
+            if (currentSectionState == sectionState.end) { EndSection(); }
 
         }
         else
@@ -265,9 +273,50 @@ public class WIS_MainManager : MonoBehaviour
 
     public void StartSection()
     {
+        Debug.Log("In " + currentSection.sectionName);
+
+        if (Input.GetKey(KeyCode.J))
+        {
+
+            WIS_AnimationManager.instance.InitialisePosition();
+            currentSectionState = sectionState.action;
+
+        }
 
 
 
+    }
+
+    public void EndIntro()
+    {
+
+        if (!WIS_AnimationManager.instance.inEndAnimation)
+        {
+
+            StartCoroutine(WIS_AnimationManager.instance.EndAnimation());
+
+        }
+        else
+        {
+
+            currentSectionState = sectionState.action;
+
+        }
+        
+
+
+    }
+
+    public void EndSection()
+    {
+
+        if (Input.GetKey(KeyCode.J))
+        {
+
+            currentSectionState = sectionState.intro;
+            currentSection = currentSection.endSections[0].nextSection;
+
+        }
 
     }
 

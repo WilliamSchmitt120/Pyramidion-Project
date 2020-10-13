@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WIS_AnimationManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class WIS_AnimationManager : MonoBehaviour
     public form currentForm;
 
     public bool inAnimation;
+    public bool inEndAnimation;
 
     public GameObject chose;
     public GameObject pierre;
@@ -43,6 +45,13 @@ public class WIS_AnimationManager : MonoBehaviour
     public ParticleSystem windFX2;
     public ParticleSystem windFX3;
     public ParticleSystem windFX4;
+
+    [Header("Forms Positions & Canvas")]
+
+    public float formPosition;
+
+    
+
 
     void Awake()
     {
@@ -184,6 +193,41 @@ public class WIS_AnimationManager : MonoBehaviour
         inAnimation = false;
 
     }
+
+    public IEnumerator EndAnimation()
+    {
+
+        inEndAnimation = true;
+
+        while (cube.transform.position.y > -50)
+        {
+
+            cube.transform.Translate(new Vector3(0, -10, 0) * Time.deltaTime, Space.World);
+
+            if (WIS_AnimationManager.instance.inAnimation == false)
+            {
+
+                StartCoroutine(PlayFX(WIS_MainManager.instance.lastInput));
+
+            }
+
+            yield return null;
+
+        }
+
+
+        inEndAnimation = false;
+
+
+    }
+
+    public void InitialisePosition()
+    {
+
+        cube.transform.position = new Vector3(0, 0, 50);
+
+    }
+
 
 
 
