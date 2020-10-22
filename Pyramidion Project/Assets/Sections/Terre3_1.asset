@@ -15,24 +15,24 @@ MonoBehaviour:
   sectionName: Terre3_1
   introductionMonologue:
     name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    clip: {fileID: 8300000, guid: de9027f913655484bb5dcf0403097219, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   wrongMonologue:
     name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    clip: {fileID: 8300000, guid: ab6cf243663c27b4a8f74f06ae45735b, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   ambiantMusic:
     name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
+    clip: {fileID: 8300000, guid: bc1ca8d9026904e45a86735401b197a3, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
   endSections:
   - nextSection: {fileID: 11400000, guid: 742dc1d2dfebec64ab121ce11c4cb6d8, type: 2}

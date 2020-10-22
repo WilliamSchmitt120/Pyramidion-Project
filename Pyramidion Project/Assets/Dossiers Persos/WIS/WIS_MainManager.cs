@@ -18,6 +18,8 @@ public class WIS_MainManager : MonoBehaviour
 
     private bool transitionPlayed;
 
+    public bool musicTransitionPlayed;
+
     private bool playedMainDialogue;
 
     public WIS_Section defaultSection;
@@ -104,6 +106,8 @@ public class WIS_MainManager : MonoBehaviour
 
         playedMainDialogue = false;
 
+        
+
         if (animationPlayed == false && WIS_AnimationManager.instance.inAnimation == false)
         {
 
@@ -115,13 +119,21 @@ public class WIS_MainManager : MonoBehaviour
         if (transitionPlayed == false && WIS_AudioManager.instance.inTransition == false)
         {
 
-            transitionPlayed = true;
-
             StartCoroutine(WIS_AudioManager.instance.Transition(lastInput));
+            transitionPlayed = true;
 
         }
 
-        if (animationPlayed == true && transitionPlayed == true && WIS_AnimationManager.instance.inAnimation == false && WIS_AudioManager.instance.inTransition == false)
+        if (musicTransitionPlayed == false && WIS_AudioManager.instance.inMusicTransition == false)
+        {
+
+            Debug.Log("MusicTransition");
+            StartCoroutine(WIS_AudioManager.instance.MusicTransition());
+            musicTransitionPlayed = true;
+
+        }
+
+        if (animationPlayed == true && transitionPlayed == true && musicTransitionPlayed == true && WIS_AnimationManager.instance.inAnimation == false && WIS_AudioManager.instance.inTransition == false && WIS_AudioManager.instance.inMusicTransition == false)
         {
 
             currentSectionState = sectionState.action;
@@ -138,6 +150,7 @@ public class WIS_MainManager : MonoBehaviour
 
         animationPlayed = false;
         transitionPlayed = false;
+        musicTransitionPlayed = false;
 
         if (WIS_AudioManager.instance.inMainDialogue == false && playedMainDialogue == false)
         {

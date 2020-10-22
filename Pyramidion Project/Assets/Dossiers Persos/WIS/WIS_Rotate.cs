@@ -19,7 +19,7 @@ public class WIS_Rotate : MonoBehaviour
     void Update()
     {
 
-        cube1.transform.Rotate(new Vector3(0, 1, 0));
+        cube1.transform.Rotate(new Vector3(0, 0.1f, 0));
 
 
 

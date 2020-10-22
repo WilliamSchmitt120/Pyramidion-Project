@@ -15,24 +15,24 @@ MonoBehaviour:
   sectionName: Eau_4_1
   introductionMonologue:
     name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
+    clip: {fileID: 8300000, guid: bed0dd560ff77db47a7c489628ae2e52, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
   wrongMonologue:
     name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    clip: {fileID: 8300000, guid: e631c67ad2814334ba3c622561964eca, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   ambiantMusic:
     name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
+    clip: {fileID: 8300000, guid: 23d0d5d5c70937a479c9dfa600ac5c1e, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
   endSections:
   - nextSection: {fileID: 11400000, guid: 26ddbac706de6334b868db31e008ddcd, type: 2}

@@ -10,12 +10,14 @@ public class WIS_AudioManager : MonoBehaviour
     public static WIS_AudioManager instance;
 
     public STG_Sound currentMusic;
+    public STG_Sound defaultMusic;
 
     public STG_Sound currentDialogue;
 
     public STG_Sound currentTransition;
 
     public bool inTransition;
+    public bool inMusicTransition;
 
     public bool inMainDialogue;
 
@@ -57,14 +59,73 @@ public class WIS_AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(MusicTransition());
     }
 
     // Update is called once per frame
     void Update()
     {
-        musicSource.clip = null;
+        
     }
+
+    public IEnumerator MusicTransition()
+    {
+
+        inMusicTransition = true;
+
+        
+
+        if (musicSource.clip == null)
+        {
+
+            musicSource.clip = defaultMusic.clip;
+            musicSource.pitch = defaultMusic.pitch;
+            musicSource.volume = defaultMusic.volume;
+
+        }
+
+
+        
+
+        float startVolume = musicSource.volume;
+        while (musicSource.volume > 0)
+        {
+
+            musicSource.volume -= startVolume * Time.deltaTime / 1;
+
+            yield return null;
+
+        }
+
+        musicSource.Stop();
+
+        musicSource.clip = WIS_MainManager.instance.currentSection.ambiantMusic.clip;
+        musicSource.pitch = WIS_MainManager.instance.currentSection.ambiantMusic.pitch;
+        musicSource.volume = WIS_MainManager.instance.currentSection.ambiantMusic.volume;
+        musicSource.loop = WIS_MainManager.instance.currentSection.ambiantMusic.loop;
+
+        float finalVolume = musicSource.volume;
+        musicSource.volume = 0;
+
+        musicSource.Play();
+
+        while (musicSource.volume < finalVolume)
+        {
+
+            musicSource.volume += finalVolume * Time.deltaTime / 1;
+
+            yield return null;
+
+        }
+
+        musicSource.volume = finalVolume;
+
+        inMusicTransition = false;
+
+        Debug.Log("EndMusicTransition");
+
+    }
+
 
     public IEnumerator Transition(WIS_EndSection.inputTypes inputType)
     {

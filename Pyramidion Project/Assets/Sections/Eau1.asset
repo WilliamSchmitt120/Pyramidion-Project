@@ -17,22 +17,22 @@ MonoBehaviour:
     name: 
     clip: {fileID: 8300000, guid: 1ea07a184b3c3474f8d8f86f20913427, type: 3}
     volume: 1
-    pitch: 1.5
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   wrongMonologue:
     name: 
     clip: {fileID: 8300000, guid: 93e2f107971f63044878620fce91c5e6, type: 3}
     volume: 1
-    pitch: 1.5
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   ambiantMusic:
     name: 
-    clip: {fileID: 8300000, guid: bc1ca8d9026904e45a86735401b197a3, type: 3}
-    volume: 1
-    pitch: 1.5
-    loop: 0
+    clip: {fileID: 8300000, guid: f59dda0714c5c384aae7d85897c7ef9d, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
   endSections:
   - nextSection: {fileID: 11400000, guid: 6aaa33154f743554f9e2653143d36bd1, type: 2}

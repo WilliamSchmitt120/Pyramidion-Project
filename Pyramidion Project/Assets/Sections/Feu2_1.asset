@@ -15,24 +15,24 @@ MonoBehaviour:
   sectionName: Feu2_1
   introductionMonologue:
     name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    clip: {fileID: 8300000, guid: 232361970b216ce4b923dfc7e731eb8c, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   wrongMonologue:
     name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    clip: {fileID: 8300000, guid: ddf03b0e3bd8c9f48b0916b5fcb5e87c, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   ambiantMusic:
     name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
+    clip: {fileID: 8300000, guid: 23d0d5d5c70937a479c9dfa600ac5c1e, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
   endSections:
   - nextSection: {fileID: 11400000, guid: 5d8d78112c1a15d4282b5f6e67b64159, type: 2}

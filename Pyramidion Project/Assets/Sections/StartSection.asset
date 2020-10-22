@@ -29,10 +29,10 @@ MonoBehaviour:
     source: {fileID: 0}
   ambiantMusic:
     name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
+    clip: {fileID: 8300000, guid: 2b9b291d2c61e5a4ca24d05cb7effff7, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
   endSections:
   - nextSection: {fileID: 11400000, guid: 977e6308005a58f428b1bbf9db9901f2, type: 2}
