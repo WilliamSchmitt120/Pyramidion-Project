@@ -15,16 +15,16 @@ MonoBehaviour:
   sectionName: StartSection
   introductionMonologue:
     name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    clip: {fileID: 8300000, guid: c3151bab8921b4f4cb0a03ef43e64a2b, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   wrongMonologue:
     name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    clip: {fileID: 8300000, guid: 1a67d564dee502a419e1226b7865fc14, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   ambiantMusic:

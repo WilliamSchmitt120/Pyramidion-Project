@@ -155,7 +155,7 @@ public class WIS_AudioManager : MonoBehaviour
             dialogueSource.volume = WIS_MainManager.instance.currentSection.wrongMonologue.volume;
             dialogueSource.pitch = WIS_MainManager.instance.currentSection.wrongMonologue.pitch;
 
-            dialogueSource.Stop();
+            dialogueSource.Play();
 
             Debug.Log("InWrongDialogue");
 
