@@ -22,6 +22,8 @@ public class WIS_MainManager : MonoBehaviour
 
     private bool playedMainDialogue;
 
+    private bool endAnimationPlayed;
+
     public WIS_Section defaultSection;
 
     [SerializeField] public WIS_EndSection.inputTypes lastInput;
@@ -169,6 +171,7 @@ public class WIS_MainManager : MonoBehaviour
 
         }
 
+
     }
 
     private void End()
@@ -296,20 +299,24 @@ public class WIS_MainManager : MonoBehaviour
 
         }
 
-
+        endAnimationPlayed = false;
 
     }
 
     public void EndIntro()
     {
 
-        if (!WIS_AnimationManager.instance.inEndAnimation)
+        playedMainDialogue = false;
+
+        if (!WIS_AnimationManager.instance.inEndAnimation && endAnimationPlayed == false)
         {
 
             StartCoroutine(WIS_AnimationManager.instance.EndAnimation());
+            endAnimationPlayed = true;
 
         }
-        else
+        
+        if (!WIS_AnimationManager.instance.inEndAnimation && endAnimationPlayed == true)
         {
 
             currentSectionState = sectionState.action;

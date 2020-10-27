@@ -199,7 +199,7 @@ public class WIS_AnimationManager : MonoBehaviour
 
         inEndAnimation = true;
 
-        while (cube.transform.position.y > -50)
+        while (cube.transform.position.y > -75)
         {
 
             cube.transform.Translate(new Vector3(0, -10, 0) * Time.deltaTime, Space.World);
