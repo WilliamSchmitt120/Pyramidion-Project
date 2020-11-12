@@ -23,5 +23,8 @@ public class WIS_Section : ScriptableObject
 
     public bool isEndSection;
 
+    public bool blueLed;
+
+    public bool redLed;
 
 }

@@ -30,7 +30,7 @@ MonoBehaviour:
   ambiantMusic:
     name: 
     clip: {fileID: 8300000, guid: bc1ca8d9026904e45a86735401b197a3, type: 3}
-    volume: 0.05
+    volume: 0.025
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -42,3 +42,5 @@ MonoBehaviour:
   form: 0
   isStartSection: 1
   isEndSection: 0
+  blueLed: 0
+  redLed: 0

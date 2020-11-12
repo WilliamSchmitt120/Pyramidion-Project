@@ -28,6 +28,11 @@ public class WIS_MainManager : MonoBehaviour
 
     [SerializeField] public WIS_EndSection.inputTypes lastInput;
 
+    // Les deux bool qui vont controller les led.
+
+    public bool ledRed;
+    public bool ledBlue;
+
     void Awake()
     {
 
@@ -108,7 +113,13 @@ public class WIS_MainManager : MonoBehaviour
 
         playedMainDialogue = false;
 
-        
+        if (currentSection.blueLed == true || currentSection.redLed == true)
+        {
+
+            ledBlue = currentSection.blueLed;
+            ledRed = currentSection.redLed;
+
+        }
 
         if (animationPlayed == false && WIS_AnimationManager.instance.inAnimation == false)
         {
@@ -297,6 +308,9 @@ public class WIS_MainManager : MonoBehaviour
             WIS_AnimationManager.instance.InitialisePosition();
             currentSectionState = sectionState.action;
 
+            ledBlue = false;
+            ledRed = false;
+
         }
 
         endAnimationPlayed = false;
@@ -307,6 +321,15 @@ public class WIS_MainManager : MonoBehaviour
     {
 
         playedMainDialogue = false;
+
+        if (currentSection.blueLed == true || currentSection.redLed == true)
+        {
+
+            ledBlue = currentSection.blueLed;
+            ledRed = currentSection.redLed;
+
+        }
+
 
         if (!WIS_AnimationManager.instance.inEndAnimation && endAnimationPlayed == false)
         {
@@ -336,6 +359,8 @@ public class WIS_MainManager : MonoBehaviour
             currentSectionState = sectionState.intro;
             currentSection = currentSection.endSections[0].nextSection;
 
+            ledBlue = false;
+            ledRed = false;
         }
 
     }
