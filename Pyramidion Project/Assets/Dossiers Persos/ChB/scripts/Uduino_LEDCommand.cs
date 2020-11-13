@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Uduino;
 
+/// <summary>
+/// CHB -- Contains the commands for the LED head
+/// </summary>
 public class Uduino_LEDCommand : MonoBehaviour
 {
     public enum lightCommand { Reset, Victory, Defeat};
@@ -25,11 +28,11 @@ public class Uduino_LEDCommand : MonoBehaviour
             }
         }
     }
-    
+
     /// <summary>
-    /// CHB -- Select command with lightCommand enum members Victory, Defeat or Reset
+    /// CHB -- Select command with lightCommand enum members
     /// </summary>
-    /// <param name="command"></param>
+    /// <param name="command">Victory, Defeat or Reset</param>
     public void CommandLED(lightCommand command)
     {
         switch (command)

@@ -22,5 +22,9 @@ public class DummyKeypress : MonoBehaviour
         {
             UduinoManager.Instance.sendCommand("defeat");
         }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            UduinoManager.Instance.sendCommand("reset");
+        }
     }
 }
