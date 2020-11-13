@@ -10,7 +10,7 @@ public class Uduino_LEDCommand : MonoBehaviour
 {
     public enum lightCommand { Reset, Victory, Defeat};
     bool inLightSequence = false;
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +26,10 @@ public class Uduino_LEDCommand : MonoBehaviour
                 CommandLED(lightCommand.Defeat);
                 inLightSequence = true;
             }
+        }
+        else if(inLightSequence && WIS_MainManager.instance.currentSection.isStartSection)
+        {
+            CommandLED(lightCommand.Reset);
         }
     }
 
